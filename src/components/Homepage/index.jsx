@@ -1,29 +1,42 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
-    AddButton,
-    Container,
-    Input,
-    InputContainer,
-    TaskContainer,
-    TaskContainerWrapper,
-    TasksTitle
+  AddButton,
+  CenteredTaskContainer,
+  Checkbox,
+  Container,
+  InputContainer,
+  TaskCard,
+  TaskInput,
+  TaskListTitle,
+  TasksContainer,
+  TaskText,
 } from "./StyledComponents";
 
 const Homepage = () => {
-  const [taskList , setTaskList] = useState(['tarefa 1', 'tarefa 2', 'tarefa 3']);
+  const [taskList , setTaskList] = useState();
+
+  useEffect(() => {
+    setTaskList(['teste'])
+  })
 
   return(
    <Container>
-       <InputContainer>
-           <Input />
-           <AddButton> + </AddButton>
-       </InputContainer>
-       <TaskContainer>
-           <TaskContainerWrapper>
-               <TasksTitle>Lista de tarefas</TasksTitle>
-               {taskList.map(task => <p>{task}</p>)}
-           </TaskContainerWrapper>
-       </TaskContainer>
+     <InputContainer>
+       <TaskInput placeholder={'Insira sua tarefa...'}/>
+       <AddButton>Adicionar</AddButton>
+     </InputContainer>
+     <TasksContainer>
+       <CenteredTaskContainer>
+         <TaskListTitle>Lista de tarefas</TaskListTitle>
+         {taskList?.map((task, index) => (
+           <TaskCard key={index}>
+             <Checkbox type={'checkbox'}/>
+             <TaskText>{task}</TaskText>
+           </TaskCard>
+         )
+         )}
+       </CenteredTaskContainer>
+     </TasksContainer>
    </Container>
   )
 }
