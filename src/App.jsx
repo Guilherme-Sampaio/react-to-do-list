@@ -1,6 +1,12 @@
 import React from 'react';
-import Homepage from "./components/Homepage";
+import Homepage from './components/Homepage';
+import GlobalStyle from './GlobalStyle'
 
-const App = () => <Homepage />;
+const App = () => (
+  <>
+    <Homepage />
+    <GlobalStyle />
+  </>
+);
 
 export default App;

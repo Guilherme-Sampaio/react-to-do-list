@@ -3,54 +3,104 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  flex-direction: column;]
+  flex-direction: column;
+  
+  background-color: #EFEFEF;
 `;
 
 export const InputContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  
   width: 80%;
-  background-color: rgba(245, 245, 245, 1);
-  padding: 20px 0;
   height: 50px;
-  box-shadow: 1px 1px #eee;
-`;
-
-export const AddButton = styled.button`
-  background-color: green;
-  width: 50px;
-  height: 50px;
-  color: white;
-  font-size: 24px;
-  border-radius: 50px;
-  border: unset;
-  margin-left: 10px;
-  cursor: pointer;
-`;
-
-export const Input = styled.input`
-  font-size: 18px;
-  border: unset;
-  border-bottom: 1px solid #000;
-`;
-
-export const TaskContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 80%;
   margin-top: 30px;
-  background-color: rgba(245, 245, 245, 1);
-  padding: 20px 0;
-  box-shadow: 1px 1px #eee;
+  
+  background-color: #FFF;
 `;
 
-export const TaskContainerWrapper = styled.div`
+export const TaskInput = styled.input `
+  border: none;
+  border-bottom: 1px solid #000;
+  
+  height: 30px;
+  width: 500px;
+  padding: 0 5px;
+  
+  font-weight: 500;
+`;
+
+export const AddButton = styled.button `
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+  
+  border: unset;
+  border-radius: 5px;
+  
+  background-color: #444444;
+  color: #FFF;
+  font-weight: bold;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export const TasksContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  
+  width: 80%;
+  margin: 30px 0;
+  
+  background-color: #FFF;
+`;
+
+export const CenteredTaskContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 20px 50px;
+  
+  width: 610px;
+  height: 80%;
+  margin: 30px 0;
+  
+  background-color: #FFF;
 `;
 
-export const TasksTitle = styled.h2`
-  font-size: 18px;
-  font-weight: 600;
+export const TaskListTitle = styled.h2`
+  font-weight: 500;
+  font-size: 24px;
+  
+  height: 30px;
+  margin-bottom: 10px;
+`;
+
+export const TaskCard = styled.div`
+  display: flex;
+  align-items: center;
+  
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+
+  border-bottom: 1px solid #DDDDDD;
+  
+  &:first-of-type {
+    border-top: 1px solid #DDDDDD;
+  }
+`;
+
+export const TaskText = styled.p`
+  width: auto;
+  font-weight: 500;
+  color: #444444;
+`;
+
+export const Checkbox = styled.input`
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  border-radius: 10px;
 `;
