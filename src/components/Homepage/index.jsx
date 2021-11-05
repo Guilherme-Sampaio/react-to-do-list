@@ -11,19 +11,42 @@ import {
   TasksContainer,
   TaskText,
 } from "./StyledComponents";
+import {findAllTasks, saveTask} from "../../services/taskService";
 
 const Homepage = () => {
-  const [taskList , setTaskList] = useState();
+  const [taskList, setTaskList] = useState();
+  const [task , setTask] = useState();
 
   useEffect(() => {
-    setTaskList(['teste'])
+    findAndSetTasks();
   })
+
+  const findAndSetTasks = async () => {
+    const response = await findAllTasks();
+    response && setTaskList(response);
+  }
+
+  const handleChange = event => {
+    setTask(event?.target?.value);
+  }
+
+  const createTask = async () => {
+    const response = await saveTask({
+      title: task,
+      done: false,
+    });
+    response && await findAndSetTasks();
+  }
 
   return(
    <Container>
      <InputContainer>
-       <TaskInput placeholder={'Insira sua tarefa...'}/>
-       <AddButton>Adicionar</AddButton>
+       <TaskInput
+         onChange={(event) => handleChange(event)}
+         value={task}
+         placeholder={'Insira sua tarefa...'}
+       />
+       <AddButton onClick={() => createTask()}>Adicionar</AddButton>
      </InputContainer>
      <TasksContainer>
        <CenteredTaskContainer>
@@ -31,7 +54,7 @@ const Homepage = () => {
          {taskList?.map((task, index) => (
            <TaskCard key={index}>
              <Checkbox type={'checkbox'}/>
-             <TaskText>{task}</TaskText>
+             <TaskText>{task?.title}</TaskText>
            </TaskCard>
          )
          )}
