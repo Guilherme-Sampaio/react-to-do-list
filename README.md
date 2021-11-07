@@ -34,10 +34,11 @@ npm run dev
 ## Tecnologias utilizadas
 
 * ReactJS
+* Styled Components
 * NPM
 
 ---
-## Autor
+## Autores
 
 <a href="https://www.linkedin.com/in/guilherme-sampaio-4946a01a6/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADAn1LABvmw2dWfN4Q51WAqXrKE4nrouSeU" target='_blank'>
 <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQEoAQjPfuC4PA/profile-displayphoto-shrink_800_800/0/1602284719328?e=1639008000&v=beta&t=u7vnKqFL0Ho33yDnb4sef55MukZvIR9NBB5B2S7Ckb4" width="100px;" alt=""/>
@@ -48,12 +49,21 @@ Guilherme Sampaio
 </a>
 
 [![Linkedin Badge](https://img.shields.io/badge/-Guilherme-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/guilherme-sampaio-4946a01a6/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADAn1LABvmw2dWfN4Q51WAqXrKE4nrouSeU)](https://www.linkedin.com/in/guilherme-sampaio-4946a01a6/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADAn1LABvmw2dWfN4Q51WAqXrKE4nrouSeU)
-[![Gmail Badge](https://img.shields.io/badge/-kaisergui258@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:kaisergui258@gmail.com)](mailto:kaisergui258@gmail.com)
+
+<a href="https://www.linkedin.com/in/lucasnegricargnin/" target='_blank'>
+<img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4E03AQE6Bfg9EQKIFQ/profile-displayphoto-shrink_200_200/0/1628562038325?e=1642032000&v=beta&t=Jc6G6nNjPW-vupK_vzvwN5k9c0NfuRjUk_P5XpQ5-_8" width="100px;" alt=""/>
+</a>
+</br>
+<a href="https://www.linkedin.com/in/guilherme-sampaio-4946a01a6/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADAn1LABvmw2dWfN4Q51WAqXrKE4nrouSeU" target='_blank'>
+Lucas Negri
+</a>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Lucas-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucas-negri-4946a01a6/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADAn1LABvmw2dWfN4Q51WAqXrKE4nrouSeU)](https://www.linkedin.com/in/lucasnegricargnin/)
 
 ---
 ## Licença
 
-[![GitHub license](https://img.shields.io/github/license/Pietrogon/todo-list)](https://github.com/Pietrogon/todo-list/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/apm/l/react)](https://github.com/Guilherme-Sampaio/react-to-do-list/blob/main/LICENSE)
 
 ```
 MIT License
