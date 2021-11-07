@@ -18,7 +18,7 @@ A intenção do projeto é criar um aplicativo to-do list utilizando as ferramen
 ```bash
 git clone https://github.com/Guilherme-Sampaio/react-to-do-list.git
 
-cd move-it
+cd react-to-do-list
 ```
 
 2. Instalar as dependências
