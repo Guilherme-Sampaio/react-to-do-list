@@ -54,7 +54,7 @@ Guilherme Sampaio
 <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4E03AQE6Bfg9EQKIFQ/profile-displayphoto-shrink_200_200/0/1628562038325?e=1642032000&v=beta&t=Jc6G6nNjPW-vupK_vzvwN5k9c0NfuRjUk_P5XpQ5-_8" width="100px;" alt=""/>
 </a>
 </br>
-<a href="https://www.linkedin.com/in/guilherme-sampaio-4946a01a6/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADAn1LABvmw2dWfN4Q51WAqXrKE4nrouSeU" target='_blank'>
+<a href="https://www.linkedin.com/in/lucasnegricargnin/" target='_blank'>
 Lucas Negri
 </a>
 
@@ -63,7 +63,7 @@ Lucas Negri
 ---
 ## Licença
 
-[![GitHub license](https://img.shields.io/apm/l/react)](https://github.com/Guilherme-Sampaio/react-to-do-list/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/apm/l/react)](https://github.com/Guilherme-Sampaio/springboot-to-do-list-api/blob/main/LICENSE)
 
 ```
 MIT License
