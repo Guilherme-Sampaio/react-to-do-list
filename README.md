@@ -40,6 +40,8 @@ npm run dev
 ---
 ## Autores
 
+Feito com carinho, café, e muita dedicação :)
+
 <a href="https://www.linkedin.com/in/guilherme-sampaio-4946a01a6/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADAn1LABvmw2dWfN4Q51WAqXrKE4nrouSeU" target='_blank'>
 <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQEoAQjPfuC4PA/profile-displayphoto-shrink_800_800/0/1602284719328?e=1639008000&v=beta&t=u7vnKqFL0Ho33yDnb4sef55MukZvIR9NBB5B2S7Ckb4" width="100px;" alt=""/>
 </a>
