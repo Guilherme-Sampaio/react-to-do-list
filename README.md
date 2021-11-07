@@ -65,7 +65,7 @@ Lucas Negri
 ---
 ## Licença
 
-[![GitHub license](https://img.shields.io/apm/l/react)](https://github.com/Guilherme-Sampaio/springboot-to-do-list-api/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/apm/l/react)](https://github.com/Guilherme-Sampaio/react-to-do-list/blob/main/LICENSE)
 
 ```
 MIT License
