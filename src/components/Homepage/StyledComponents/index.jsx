@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import {COLORS} from "../../../utils/colors";
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
   
-  background-color: #EFEFEF;
+  background-color: ${COLORS.lightGrey};
 `;
 
 export const InputContainer = styled.div`
@@ -17,7 +18,7 @@ export const InputContainer = styled.div`
   height: 50px;
   margin-top: 30px;
   
-  background-color: #FFF;
+  background-color: ${COLORS.whiteText};
 `;
 
 export const TaskInput = styled.input `
@@ -39,8 +40,8 @@ export const AddButton = styled.button `
   border: unset;
   border-radius: 5px;
   
-  background-color: #444444;
-  color: #FFF;
+  background-color: ${COLORS.greyBackground};
+  color: ${COLORS.whiteText};
   font-weight: bold;
   
   &:hover {
@@ -55,7 +56,7 @@ export const TasksContainer = styled.div`
   width: 80%;
   margin: 30px 0;
   
-  background-color: #FFF;
+  background-color: ${COLORS.whiteText};
 `;
 
 export const CenteredTaskContainer = styled.div`
@@ -66,7 +67,7 @@ export const CenteredTaskContainer = styled.div`
   height: 80%;
   margin: 30px 0;
   
-  background-color: #FFF;
+  background-color: ${COLORS.whiteText};
 `;
 
 export const TaskListTitle = styled.h2`
@@ -85,17 +86,17 @@ export const TaskCard = styled.div`
   height: 30px;
   padding: 5px;
 
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid ${COLORS.lightGrey};
   
   &:first-of-type {
-    border-top: 1px solid #DDDDDD;
+    border-top: 1px solid ${COLORS.lightGrey};
   }
 `;
 
 export const TaskText = styled.p`
   width: auto;
   font-weight: 500;
-  color: #444444;
+  color: ${COLORS.greyBackground};
 `;
 
 export const Checkbox = styled.input`
