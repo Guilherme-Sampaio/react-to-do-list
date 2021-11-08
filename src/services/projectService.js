@@ -1,6 +1,6 @@
 import {baseUrl, defaultRequest} from "./serviceCommon";
 
-export const findAllTasks = () => {
+export const findAllProjects = () => {
   const request = {
     ...defaultRequest,
     method: 'GET',
@@ -8,7 +8,7 @@ export const findAllTasks = () => {
   return fetch( `${baseUrl}/task/all`, request).then(response => response.json());
 }
 
-export function saveTask(task) {
+export function saveProject(task) {
   const request = {
     ...defaultRequest,
     method: 'POST',

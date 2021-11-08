@@ -35,7 +35,10 @@ const Homepage = () => {
       title: task,
       done: false,
     });
-    response && await findAndSetTasks();
+    if (response) {
+      setTask('');
+      await findAndSetTasks();
+    }
   }
 
   return(
