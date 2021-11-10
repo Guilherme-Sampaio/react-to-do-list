@@ -5,7 +5,7 @@ export const findAllProjects = () => {
     ...defaultRequest,
     method: 'GET',
   }
-  return fetch( `${baseUrl}/task/all`, request).then(response => response.json());
+  return fetch( `${baseUrl}/project/all`, request).then(response => response.json());
 }
 
 export function saveProject(task) {

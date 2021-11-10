@@ -7,7 +7,7 @@ import {AppContainer} from "./StyledComponents";
 const App = () => (
   <>
     <AppContainer>
-      <Sidebar />
+      <Sidebar/>
       <Homepage />
     </AppContainer>
     <GlobalStyle />
