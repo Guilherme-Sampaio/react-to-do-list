@@ -4,7 +4,6 @@ import {Container} from "./StyledComponents";
 const Sidebar = () => {
   return (
     <Container>
-
     </Container>
   )
 };

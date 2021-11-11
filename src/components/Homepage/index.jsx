@@ -11,7 +11,7 @@ import {
   TasksContainer,
   TaskText,
 } from "./StyledComponents";
-import {findAllTasks, saveTask} from "../../services/taskService";
+import {findAllTasks, saveTask, setAsDone, setAsPending} from "../../services/taskService";
 
 const Homepage = () => {
   const [taskList, setTaskList] = useState();
@@ -40,6 +40,19 @@ const Homepage = () => {
       await findAndSetTasks();
     }
   }
+  
+  useEffect(async ()=>{
+    await findAllTasks();
+  },[]);
+
+  async function onChange(target,task){
+    if (target.checked){
+      await setAsDone(task);
+    } else {
+      await setAsPending(task);
+    }
+    await findAllTasks();
+  }
 
   return(
    <Container>
@@ -56,7 +69,7 @@ const Homepage = () => {
          <TaskListTitle>Lista de tarefas</TaskListTitle>
          {taskList?.map((task, index) => (
            <TaskCard key={index}>
-             <Checkbox type={'checkbox'}/>
+             <Checkbox type={'checkbox'} onChange={({target}) => onChange(target,task)}/>
              <TaskText>{task?.title}</TaskText>
            </TaskCard>
          )
