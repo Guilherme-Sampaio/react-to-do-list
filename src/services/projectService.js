@@ -8,12 +8,12 @@ export const findAllProjects = () => {
   return fetch( `${baseUrl}/project/all`, request).then(response => response.json());
 }
 
-export function saveProject(task) {
+export function saveProject(project) {
   const request = {
     ...defaultRequest,
     method: 'POST',
-    body: JSON.stringify(task),
+    body: JSON.stringify(project),
   };
-  return fetch(`http://localhost:8080/task`, request).then(response => response.json());
+  return fetch(`${baseUrl}/project`, request).then(response => response.json());
 }
 

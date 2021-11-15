@@ -1,24 +1,27 @@
 import styled from "styled-components";
 import {COLORS} from "../../../utils/colors";
 
-export const Container = styled.div`
+export const InputContainerForm = styled.form`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  
-  background-color: ${COLORS.lightGrey};
-`;
-
-export const InputContainer = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
   
   width: 80%;
-  height: 50px;
   margin-top: 30px;
+  padding: 20px 0;
   
   background-color: ${COLORS.whiteText};
+`;
+
+export const InputColumnDiv = styled.div `
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+`;
+
+
+export const InputRowDiv = styled.div`
+  display: flex;
 `;
 
 export const TaskInput = styled.input `
@@ -26,27 +29,10 @@ export const TaskInput = styled.input `
   border-bottom: 1px solid #000;
   
   height: 30px;
-  width: 500px;
+  width: 600px;
   padding: 0 5px;
   
   font-weight: 500;
-`;
-
-export const AddButton = styled.button `
-  width: 100px;
-  height: 30px;
-  margin-left: 10px;
-  
-  border: unset;
-  border-radius: 5px;
-  
-  background-color: ${COLORS.greyBackground};
-  color: ${COLORS.whiteText};
-  font-weight: bold;
-  
-  &:hover {
-    opacity: 0.8;
-  }
 `;
 
 export const TasksContainer = styled.div`
@@ -54,6 +40,7 @@ export const TasksContainer = styled.div`
   justify-content: center;
   
   width: 80%;
+  height: 100%;
   margin: 30px 0;
   
   background-color: ${COLORS.whiteText};
