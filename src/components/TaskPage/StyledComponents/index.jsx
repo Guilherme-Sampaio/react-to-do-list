@@ -84,6 +84,7 @@ export const TaskText = styled.p`
   width: auto;
   font-weight: 500;
   color: ${COLORS.greyBackground};
+  text-decoration: ${({ done }) => done && 'line-through'};
 `;
 
 export const Checkbox = styled.input`

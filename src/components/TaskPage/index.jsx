@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {findTasksByProject, saveTask} from "../../services/taskService";
+import {findTasksByProject, saveTask, setTaskAsDone, setTaskAsPending} from "../../services/taskService";
 import {useParams} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {
@@ -30,6 +30,13 @@ const TaskPage = () => {
   const findAndSetTasks = async () => {
     const tasks = await findTasksByProject(params?.id);
     tasks && setTaskList(tasks);
+  }
+
+  const handleSetDone = async task => {
+    const { id, done } = task;
+    const response = done ? await setTaskAsPending(id) : await setTaskAsDone(id);
+
+    response && await findAndSetTasks();
   }
 
   const createTask = async data => {
@@ -68,8 +75,8 @@ const TaskPage = () => {
          <TaskListTitle>Lista de tarefas</TaskListTitle>
          {taskList?.map((task, index) => (
            <TaskCard key={index}>
-             <Checkbox type={'checkbox'}/>
-             <TaskText>{task?.title}</TaskText>
+             <Checkbox type={'checkbox'} checked={task?.done} onClick={() => handleSetDone(task)} />
+             <TaskText done={task?.done} >{task?.title}</TaskText>
            </TaskCard>
          ))}
        </CenteredTaskContainer>

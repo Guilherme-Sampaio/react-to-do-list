@@ -17,3 +17,19 @@ export function saveTask(task) {
   return fetch(`${baseUrl}/task`, request).then(response => response.json());
 }
 
+export function setTaskAsDone(id) {
+  const request = {
+    ...defaultRequest,
+    method: 'PATCH',
+  };
+  return fetch(`${baseUrl}/task/${id}/done`, request).then(response => response.json());
+}
+
+export function setTaskAsPending(id) {
+  const request = {
+    ...defaultRequest,
+    method: 'PATCH',
+  };
+  return fetch(`${baseUrl}/task/${id}/pending`, request).then(response => response.json());
+}
+
