@@ -16,15 +16,16 @@ export const InputContainerForm = styled.form`
 export const InputColumnDiv = styled.div `
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
   width: 600px;
+  
+  &button, input {
+    margin: 5px 0;
+  }
 `;
 
-
-export const InputRowDiv = styled.div`
-  display: flex;
-`;
-
-export const TaskInput = styled.input `
+export const StyledInput = styled.input `
   border: none;
   border-bottom: 1px solid #000;
   
@@ -70,18 +71,33 @@ export const TaskCard = styled.div`
   align-items: center;
   
   width: 100%;
-  height: 30px;
   padding: 5px;
 
   border-bottom: 1px solid ${COLORS.lightGrey};
+  
+  cursor: pointer;
   
   &:first-of-type {
     border-top: 1px solid ${COLORS.lightGrey};
   }
 `;
 
+export const SubtaskCard = styled(TaskCard)`
+  display: ${({ mustBeShown }) => mustBeShown ? 'visible' : 'none'};
+`;
+
+export const SubtaskWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid ${COLORS.lightGrey};
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 25px;
+`;
+
+
 export const TaskText = styled.p`
-  width: auto;
+  width: 100%;
   font-weight: 500;
   color: ${COLORS.greyBackground};
   text-decoration: ${({ done }) => done && 'line-through'};
@@ -92,4 +108,6 @@ export const Checkbox = styled.input`
   height: 15px;
   margin-right: 10px;
   border-radius: 10px;
+  
+  cursor: pointer;
 `;
