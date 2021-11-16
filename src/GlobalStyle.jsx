@@ -17,4 +17,8 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  form, div, p, h1, ul, li {
+    height: auto;
+  }
 `;

@@ -1,52 +1,39 @@
 import styled from "styled-components";
 import {COLORS} from "../../../utils/colors";
 
-export const Container = styled.div`
+export const InputContainerForm = styled.form`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  
-  background-color: ${COLORS.lightGrey};
-`;
-
-export const InputContainer = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
   
   width: 80%;
-  height: 50px;
   margin-top: 30px;
+  padding: 20px 0;
   
   background-color: ${COLORS.whiteText};
 `;
 
-export const TaskInput = styled.input `
+export const InputColumnDiv = styled.div `
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 600px;
+  
+  &button, input {
+    margin: 5px 0;
+  }
+`;
+
+export const StyledInput = styled.input `
   border: none;
   border-bottom: 1px solid #000;
   
   height: 30px;
-  width: 500px;
+  width: 600px;
   padding: 0 5px;
   
   font-weight: 500;
-`;
-
-export const AddButton = styled.button `
-  width: 100px;
-  height: 30px;
-  margin-left: 10px;
-  
-  border: unset;
-  border-radius: 5px;
-  
-  background-color: ${COLORS.greyBackground};
-  color: ${COLORS.whiteText};
-  font-weight: bold;
-  
-  &:hover {
-    opacity: 0.8;
-  }
 `;
 
 export const TasksContainer = styled.div`
@@ -54,6 +41,7 @@ export const TasksContainer = styled.div`
   justify-content: center;
   
   width: 80%;
+  height: 100%;
   margin: 30px 0;
   
   background-color: ${COLORS.whiteText};
@@ -83,20 +71,36 @@ export const TaskCard = styled.div`
   align-items: center;
   
   width: 100%;
-  height: 30px;
   padding: 5px;
 
   border-bottom: 1px solid ${COLORS.lightGrey};
+  
+  cursor: pointer;
   
   &:first-of-type {
     border-top: 1px solid ${COLORS.lightGrey};
   }
 `;
 
+export const SubtaskCard = styled(TaskCard)`
+  display: ${({ mustBeShown }) => mustBeShown ? 'visible' : 'none'};
+`;
+
+export const SubtaskWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid ${COLORS.lightGrey};
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 25px;
+`;
+
+
 export const TaskText = styled.p`
-  width: auto;
+  width: 100%;
   font-weight: 500;
   color: ${COLORS.greyBackground};
+  text-decoration: ${({ done }) => done && 'line-through'};
 `;
 
 export const Checkbox = styled.input`
@@ -104,4 +108,6 @@ export const Checkbox = styled.input`
   height: 15px;
   margin-right: 10px;
   border-radius: 10px;
+  
+  cursor: pointer;
 `;
