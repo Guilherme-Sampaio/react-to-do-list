@@ -18,7 +18,7 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
-  form, div, p, h1, ul, li {
+  form, div, p, h1, ul, li, input {
     height: auto;
   }
 `;
