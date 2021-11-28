@@ -59,6 +59,8 @@ export const SubtaskWrapperWithoutBorder = styled(SubtaskWrapper)`
 
 export const CommentInput = styled.input`
   width: 100%;
+  padding: 5px;
+  
   font-weight: 500;
   color: ${COLORS.greyBackground};
   text-decoration: ${({ done }) => done && 'line-through'};

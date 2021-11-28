@@ -41,3 +41,32 @@ export const TaskText = styled.p`
   color: ${COLORS.greyBackground};
   text-decoration: ${({ done }) => done && 'line-through'};
 `;
+
+export const TaskListWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+`;
+
+export const DayOptionsDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  
+  & :hover {
+    border-bottom: 1px solid ${COLORS.greyBackground};
+  }
+`;
+
+export const DayOption = styled.p`
+  width: calc(100% / 3 - 1%);
+  
+  font-weight: ${({ isSelected }) => isSelected ? 'bold' : '500'};
+  font-size: 14px;
+  color: ${COLORS.greyBackground};
+  
+  cursor: pointer;
+`;
