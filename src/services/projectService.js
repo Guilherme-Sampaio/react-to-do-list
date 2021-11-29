@@ -17,3 +17,10 @@ export function saveProject(project) {
   return fetch(`${baseUrl}/project`, request).then(response => response.json());
 }
 
+export function deleteProject(id) {
+  const request = {
+    ...defaultRequest,
+    method: 'DELETE',
+  };
+  return fetch(`${baseUrl}/project/${id}`, request).then(response => response.json());
+}

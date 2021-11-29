@@ -8,3 +8,11 @@ export function saveComment(comment) {
   };
   return fetch(`${baseUrl}/comment`, request).then(response => response.json());
 }
+
+export function deleteComment(id) {
+  const request = {
+    ...defaultRequest,
+    method: 'DELETE',
+  };
+  return fetch(`${baseUrl}/comment/${id}`, request).then(response => response.json());
+}

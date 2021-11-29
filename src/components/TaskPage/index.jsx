@@ -1,5 +1,10 @@
 import React, {createContext, useEffect, useState} from "react";
-import {findMoreThanOneWeekTasks, findTodayTasks, findWeekTasks} from "../../services/taskService";
+import {
+  findExpiredOrNullTasks,
+  findMoreThanOneWeekTasks,
+  findTodayTasks,
+  findWeekTasks
+} from "../../services/taskService";
 import {useParams} from "react-router-dom";
 import {TasksContainer, TaskListContainer, CurrentTaskContainer} from "./StyledComponents";
 import {PageContainer} from "../../common/styles/Containers";
@@ -25,6 +30,7 @@ const TaskPage = () => {
   const findAndSetTasks = async () => {
     const tasks = await choosePeriodTasks(params?.id);
     tasks && setTaskList(tasks);
+    setCurrentTask({})
   }
 
   const choosePeriodTasks = async id => {
@@ -32,6 +38,7 @@ const TaskPage = () => {
       case TASKS_PERIODS.TODAY: return await findTodayTasks(id);
       case TASKS_PERIODS.WEEK: return await findWeekTasks(id);
       case TASKS_PERIODS.MORE_THAN_ONE_WEEK: return await findMoreThanOneWeekTasks(id);
+      case TASKS_PERIODS.EXPIRED_OR_NULL: return await findExpiredOrNullTasks(id);
     }
   }
 

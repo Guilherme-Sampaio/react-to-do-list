@@ -62,7 +62,7 @@ export const DayOptionsDiv = styled.div`
 `;
 
 export const DayOption = styled.p`
-  width: calc(100% / 3 - 1%);
+  width: calc(100% / 4 - 1%);
   
   font-weight: ${({ isSelected }) => isSelected ? 'bold' : '500'};
   font-size: 14px;
