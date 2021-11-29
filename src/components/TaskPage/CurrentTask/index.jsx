@@ -1,6 +1,9 @@
 import React, {useContext} from "react";
 import {useForm} from "react-hook-form";
-import {saveComment} from "../../../services/commentService";
+import {deleteComment, saveComment} from "../../../services/commentService";
+import {ErrorText} from "../../../common/styles/Texts";
+import {TaskPageContext} from "../index";
+import {DeleteIcon} from "../StyledComponents";
 import {
   AddPlusButton,
   CommentCard,
@@ -12,9 +15,9 @@ import {
   SubtaskWrapperWithoutBorder,
   VisibilityHandler,
   CommentText,
+  CommentsWrapper,
+  DateValue,
 } from "./StyledComponents";
-import {ErrorText} from "../../../common/styles/Texts";
-import {TaskPageContext} from "../index";
 
 const CurrentTask = () => {
   const { handleSubmit, register, reset, formState: { errors } } = useForm();
@@ -35,17 +38,39 @@ const CurrentTask = () => {
     }
   }
 
+  const handleRemoveComment = id => {
+    deleteComment(id);
+
+    setTimeout(() => {
+      setCurrentTask({})
+      findAndSetTasks();
+    }, 1000)
+  }
+
+  const handleDate = date => {
+    const newDate = new Date(date);
+    return newDate?.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+  }
+
   return (
     <VisibilityHandler hasCurrentTask={Boolean(currentTask?.id)}>
       <CurrentTaskTitle>{currentTask?.title}</CurrentTaskTitle>
+      <GreyText>
+        Data:<DateValue>{handleDate(currentTask?.selectedDate)}</DateValue>
+      </GreyText>
+
       <GreyText>Comentários:</GreyText>
-      {currentTask?.comments?.map((comment, index) => (
-        <CommentCard key={index}>
-          <SubtaskWrapper>
-            <CommentText>{`- ${comment?.message}`}</CommentText>
-          </SubtaskWrapper>
-        </CommentCard>
-      ))}
+      <CommentsWrapper>
+        {currentTask?.comments?.map((comment, index) => (
+          <CommentCard key={index}>
+            <SubtaskWrapper>
+              <CommentText>{`- ${comment?.message}`}</CommentText>
+              <DeleteIcon onClick={() => handleRemoveComment(comment?.id)}/>
+            </SubtaskWrapper>
+          </CommentCard>
+        ))}
+      </CommentsWrapper>
+
       <CommentForm onSubmit={handleSubmit(createComment)}>
         <CommentCard>
           <SubtaskWrapperWithoutBorder>

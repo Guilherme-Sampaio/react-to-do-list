@@ -21,6 +21,18 @@ export const GreyText = styled.div`
   margin-bottom: 10px;
 `;
 
+export const DateValue = styled.label`
+  font-weight: 500;
+  font-size: 16px;
+  color: ${COLORS.greyBackground};
+  margin: 0  0 20px 5px;
+`;
+
+export const CommentsWrapper = styled.div`
+  max-height: 400px;
+  overflow-y: auto;
+`;
+
 export const CommentCard = styled.div`
   display: flex;
   align-items: center;
@@ -33,7 +45,6 @@ export const CommentCard = styled.div`
 
 export const SubtaskWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   
   border: 1px solid ${COLORS.lightGrey};
   border-radius: 5px;

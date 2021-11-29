@@ -27,6 +27,14 @@ export const findMoreThanOneWeekTasks = (id = '') => {
   return fetch( `${baseUrl}/task/project/distant`, request).then(response => response.json());
 }
 
+export const findExpiredOrNullTasks = (id = '') => {
+  const request = {
+    ...defaultRequest,
+    method: 'GET',
+  }
+  if (id) return fetch( `${baseUrl}/task/project/${id}/others`, request).then(response => response.json());
+  return fetch( `${baseUrl}/task/project/others`, request).then(response => response.json());
+}
 
 export function saveTask(task) {
   const request = {
@@ -51,5 +59,22 @@ export function setTaskAsPending(id) {
     method: 'PATCH',
   };
   return fetch(`${baseUrl}/task/${id}/pending`, request).then(response => response.json());
+}
+
+export function updateTask(task) {
+  const request = {
+    ...defaultRequest,
+    method: 'PUT',
+    body: JSON.stringify(task),
+  };
+  return fetch(`${baseUrl}/task`, request).then(response => response.json());
+}
+
+export function deleteTask(id) {
+  const request = {
+    ...defaultRequest,
+    method: 'DELETE',
+  };
+  return fetch(`${baseUrl}/task/${id}`, request).then(response => response.json());
 }
 

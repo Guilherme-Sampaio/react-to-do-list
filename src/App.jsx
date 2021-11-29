@@ -4,7 +4,7 @@ import GlobalStyle from './GlobalStyle'
 import Sidebar from "./components/Sidebar";
 import {AppContainer} from "./common/styles/AppStyle";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import AddProject from "./components/AddProject";
+import ProjectPage from "./components/ProjectPage";
 
 const App = () => (
   <BrowserRouter>
@@ -13,7 +13,7 @@ const App = () => (
       <Routes>
         <Route path={'/project/'} element={<TaskPage />} />
         <Route path={'/project/:id'} element={<TaskPage />} />
-        <Route path={'/project/add'} element={<AddProject />} />
+        <Route path={'/project/page'} element={<ProjectPage />} />
       </Routes>
     </AppContainer>
     <GlobalStyle />

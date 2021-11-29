@@ -32,6 +32,7 @@ const Sidebar = () => {
         <TitleWrapper
           onMouseEnter={() => setIsProjectDivOpen(true)}
           onMouseLeave={() => setIsProjectDivOpen(false)}
+          onClick={() => setIsProjectDivOpen(!isProjectDivOpen)}
         >
           <StyledLink to={'/project/'}>
             <StyledTitle>Projetos</StyledTitle>
@@ -40,7 +41,7 @@ const Sidebar = () => {
         </TitleWrapper>
 
         <ProjectsDiv mustBeShown={isProjectDivOpen} >
-          <StyledLink to={'/project/add'}>
+          <StyledLink to={'/project/page'}>
             <ProjectCard
               onMouseEnter={() => setIsProjectDivOpen(true)}
               onMouseLeave={() => setIsProjectDivOpen(false)}

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {COLORS} from "../../../utils/colors";
+import {COLORS} from "../../../../utils/colors";
 
 export const AddProjectForm = styled.form`
   display: flex;
