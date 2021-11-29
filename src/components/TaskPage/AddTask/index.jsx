@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {saveTask} from "../../../services/taskService";
 import {saveComment} from "../../../services/commentService";
 import {useForm} from "react-hook-form";
-import { InputColumnDiv, InputContainerForm, StyledInput,} from "./StyledComponents";
+import {DateInput, InputColumnDiv, InputContainerForm, StyledInput,} from "./StyledComponents";
 import {AddButton} from "../../../common/styles/Buttons";
 import {ErrorText} from "../../../common/styles/Texts";
 import {TaskPageContext} from "../index";
@@ -13,12 +13,14 @@ const AddTask = () => {
   const { params, findAndSetTasks} = useContext(TaskPageContext)
 
   const createTask = async data => {
-    const { taskName, taskComment } = data;
+    const { taskName, taskComment, taskDate } = data;
+    const convertedDate = convertUTCDateToLocalDate(taskDate);
 
     const taskResponse = await saveTask({
       title: taskName,
       done: false,
       project: params?.id ? { id: params?.id } : null,
+      selectedDate: convertedDate,
     });
 
     const commentResponse = taskComment && await saveComment({
@@ -26,10 +28,16 @@ const AddTask = () => {
       task: { id: taskResponse?.id }
     })
 
-    if (taskResponse && (!taskComment || commentResponse )) {
+    const allRequestsReturnedOk = taskResponse && (!taskComment || commentResponse);
+    if (allRequestsReturnedOk) {
       reset();
       findAndSetTasks();
     }
+  }
+
+  const convertUTCDateToLocalDate = date => {
+    const convertedDate = new Date(date + ' UTC');
+    return new Date(convertedDate?.getTime() + convertedDate?.getTimezoneOffset() * 60 * 1000);
   }
 
   return (
@@ -50,6 +58,12 @@ const AddTask = () => {
           placeholder={'Insira um comentário para sua tarefa...'}
         />
         {errors?.taskComment && <ErrorText>O comentário da tarefa não pode ter mais de 200 caracteres</ErrorText>}
+
+        <DateInput
+          type={'date'}
+          {...register('taskDate', { required: false })}
+          placeholder={'Insira uma data para sua tarefa...'}
+        />
 
         <AddButton type={'submit'}>Adicionar</AddButton>
       </InputColumnDiv>

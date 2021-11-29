@@ -7,6 +7,7 @@ export const TasksContainer = styled.div`
   
   width: 80%;
   height: 100%;
+  padding: 20px;
   margin: 30px 0;
   
   background-color: ${COLORS.whiteText};
@@ -15,11 +16,12 @@ export const TasksContainer = styled.div`
 export const TaskListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  
+  width: calc(100% / 2 - 2%);
 `;
 
 export const CurrentTaskContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  width: calc(100% / 2 - 2%);
 `;

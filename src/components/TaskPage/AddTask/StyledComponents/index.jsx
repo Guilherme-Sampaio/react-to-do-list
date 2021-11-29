@@ -35,3 +35,8 @@ export const StyledInput = styled.input `
   
   font-weight: 500;
 `;
+
+export const DateInput = styled.input `
+  width: 600px;
+  padding: 0 5px;
+`;
